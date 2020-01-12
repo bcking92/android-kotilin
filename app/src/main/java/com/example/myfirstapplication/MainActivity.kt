@@ -1,9 +1,12 @@
 package com.example.myfirstapplication
 
+
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var items_view: RecyclerView
@@ -15,10 +18,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        viewManager = LinearLayoutManager(this)
+        viewManager = GridLayoutManager(this)
+
+
         viewAdapter = MyAdapter(myDataset)
 
-        items_view = findViewById<RecyclerView>(R.id.items_view).apply {
+        items_view.apply {
             // use this setting to improve performance if you know that changes
             // in content do not change the layout size of the RecyclerView
             setHasFixedSize(true)

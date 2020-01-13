@@ -1,10 +1,10 @@
 package com.example.myfirstapplication
 
 
-
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 
@@ -18,10 +18,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        viewManager = GridLayoutManager(this)
+        viewManager = GridLayoutManager(this, 2)
+        val  datas:List<myDataset> = ArrayList()
+        val myDataset = myDataset("image", "title")
 
+        datas.plus(myDataset)
 
-        viewAdapter = MyAdapter(myDataset)
+        viewAdapter = MyAdapter(datas)
 
         items_view.apply {
             // use this setting to improve performance if you know that changes
@@ -33,5 +36,6 @@ class MainActivity : AppCompatActivity() {
 
             // specify an viewAdapter (see also next example)
             adapter = viewAdapter
+        }
     }
 }

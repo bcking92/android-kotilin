@@ -1,3 +1,7 @@
 package com.example.myfirstapplication
 
-class myDataset
+import android.graphics.drawable.Drawable
+
+
+data class myDataset(var item_image: String
+                ,var item_title: String)

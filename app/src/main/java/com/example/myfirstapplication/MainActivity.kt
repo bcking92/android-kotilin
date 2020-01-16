@@ -24,7 +24,8 @@ class MainActivity : AppCompatActivity() {
 
         datas.plus(myDataset)
 
-        viewAdapter = MyAdapter(datas)
+        viewAdapter = MyAdapter(this, datas)
+
 
         items_view.apply {
             // use this setting to improve performance if you know that changes

@@ -11,18 +11,18 @@ import androidx.recyclerview.widget.RecyclerView
 class MainActivity : AppCompatActivity() {
     private lateinit var items_view: RecyclerView
     private lateinit var viewAdapter: RecyclerView.Adapter<*>
-    private lateinit var viewManager: RecyclerView.LayoutManager
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        viewManager = GridLayoutManager(this, 2)
-        val  datas:List<myDataset> = ArrayList()
-        val myDataset = myDataset("image", "title")
+//        viewManager = GridLayoutManager(this, 2)
+        val datas = ArrayList<myDataset>()
+        datas.add(myDataset(getDrawable(R.drawable.ic_launcher_foreground)!!, getString(R.string.temp)))
 
-        datas.plus(myDataset)
+        datas.plus(datas)
 
         viewAdapter = MyAdapter(this, datas)
 
@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
             setHasFixedSize(true)
 
             // use a linear layout manager
-            layoutManager = viewManager
+//            layoutManager = viewManager
 
             // specify an viewAdapter (see also next example)
             adapter = viewAdapter

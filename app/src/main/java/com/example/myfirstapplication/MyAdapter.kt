@@ -7,13 +7,14 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.items.view.*
 import org.w3c.dom.Text
 
-class MyAdapter(val context: Context, val myDataset: List<myDataset>) :
+class MyAdapter(val myDataset: List<myDataset>) :
     RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup,
-                                    viewType: Int): MyAdapter.MyViewHolder {
+                                    viewType: Int): MyViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.items, parent, false)
         return MyViewHolder(view)
     }
@@ -36,7 +37,7 @@ class MyAdapter(val context: Context, val myDataset: List<myDataset>) :
         private var view: View = itemView
 
         fun bind(item:myDataset) {
-            view.imageView.setImageDrawable(item.item_image)
+            view.picture.setImageDrawable(item.item_image)
             view.textView.text = item.item_title
         }
     }
